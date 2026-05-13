@@ -1,0 +1,113 @@
+# PR Data Validation
+# Runs on every Pull Request that modifies data files.
+# Validates YAML format and schema compliance.
+
+name: PR Data Check
+
+on:
+  pull_request:
+    paths:
+      - "data/**/*.yml"
+      - "data/**/*.yaml"
+      - "scripts/validator.py"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history for diff
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Get changed YAML files
+        id: changed
+        run: |
+          changed_files=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- "data/*.yml" "data/*.yaml" "data/**/*.yml" "data/**/*.yaml" || true)
+          if [ -n "$changed_files" ]; then
+            echo "files<<EOF" >> $GITHUB_OUTPUT
+            echo "$changed_files" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Validate changed files
+        if: steps.changed.outputs.has_changes == 'true'
+        id: validate
+        run: |
+          files="${{ steps.changed.outputs.files }}"
+          # Also validate full data directory to catch cross-file issues
+          python scripts/validator.py data/2026/ data/archive/
+        continue-on-error: true
+
+      - name: Post PR comment
+        if: always() && steps.changed.outputs.has_changes == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const outcome = '${{ steps.validate.outcome }}';
+            const status = outcome === 'success' ? '✅ PASSED' : '❌ FAILED';
+            const sha = context.payload.pull_request.head.sha.substring(0, 7);
+
+            const body = `## Data Validation ${status}
+
+**Commit:** \`${sha}\`
+**Validator:** \`scripts/validator.py\`
+
+${outcome === 'success'
+  ? 'All YAML data files pass schema validation.'
+  : 'Validation errors found. Please check the Actions log for details.'}
+
+### Schema Requirements
+- Required fields: \+title, platform, url, is_online, phases, status\+
+- Phases must have: name, deadline (ISO 8601)
+- Valid platforms: devpost, mlh, dorahacks, devfolio, unstop, hackerearth, other
+- Valid statuses: upcoming, ongoing, ended, cancelled
+
+See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) for full schema documentation.`;
+
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const botComment = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('Data Validation')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+      - name: Fail on validation error
+        if: steps.validate.outcome == 'failure'
+        run: |
+          echo "::error::YAML validation failed. Please fix errors and push again."
+          exit 1

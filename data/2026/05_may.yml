@@ -1,0 +1,56 @@
+# Hackathon data for May 2026
+# Schema reference: https://github.com/Just-Agent/hackathon-ddl/blob/main/CONTRIBUTING.md
+
+- title: "Hack the North 2026"
+  platform: "devpost"
+  url: "https://hackthenorth.devpost.com"
+  location: "Waterloo, Canada"
+  is_online: false
+  is_hybrid: true
+  themes: ["AI/ML", "Open Innovation"]
+  prize_pool: "$50,000+"
+  currency: "USD"
+  prize_value: 50000
+  phases:
+    - name: "Registration Opens"
+      deadline: "2026-07-01T00:00:00"
+    - name: "Registration Closes"
+      deadline: "2026-08-31T23:59:59"
+    - name: "Hacking Starts"
+      deadline: "2026-09-18T09:00:00"
+    - name: "Project Submission"
+      deadline: "2026-09-20T12:00:00"
+    - name: "Demo Day"
+      deadline: "2026-09-20T15:00:00"
+  sponsors: ["Google", "Meta", "Shopify", "Stripe"]
+  eligibility: "University students worldwide"
+  status: "upcoming"
+  date_range: "September 18-20, 2026"
+  added_at: "2026-05-10"
+
+- title: "ETHGlobal New York 2026"
+  platform: "dorahacks"
+  url: "https://dorahacks.io/hackathon/ethglobal-ny-2026"
+  location: "New York, USA"
+  is_online: false
+  is_hybrid: true
+  themes: ["Web3", "DeFi"]
+  prize_pool: "$150,000+"
+  currency: "USD"
+  prize_value: 150000
+  phases:
+    - name: "Registration Opens"
+      deadline: "2026-08-01T00:00:00"
+    - name: "Registration Closes"
+      deadline: "2026-09-30T23:59:59"
+    - name: "Hacking Starts"
+      deadline: "2026-10-10T09:00:00"
+    - name: "Project Submission"
+      deadline: "2026-10-12T09:00:00"
+    - name: "Demo Day"
+      deadline: "2026-10-12T14:00:00"
+  sponsors: ["Ethereum Foundation", "Aave", "Uniswap", "Chainlink"]
+  eligibility: "Open to all"
+  status: "upcoming"
+  date_range: "October 10-12, 2026"
+  added_at: "2026-05-10"

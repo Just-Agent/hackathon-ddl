@@ -1,0 +1,53 @@
+- title: "MLH Global Hack Week 2026"
+  platform: "mlh"
+  url: "https://ghw.mlh.io"
+  location: "Online"
+  is_online: true
+  is_hybrid: false
+  themes: ["Open Source", "Beginner Friendly"]
+  prize_pool: "$25,000+"
+  currency: "USD"
+  prize_value: 25000
+  phases:
+    - name: "Registration Opens"
+      deadline: "2026-10-01T00:00:00"
+    - name: "Registration Closes"
+      deadline: "2026-10-31T23:59:59"
+    - name: "Hacking Starts"
+      deadline: "2026-11-01T00:00:00"
+    - name: "Project Submission"
+      deadline: "2026-11-07T23:59:59"
+    - name: "Demo Day"
+      deadline: "2026-11-08T18:00:00"
+  sponsors: ["GitHub", "DigitalOcean", "Twilio", "MongoDB"]
+  eligibility: "Students and beginners"
+  status: "upcoming"
+  date_range: "November 1-7, 2026"
+  added_at: "2026-05-10"
+
+- title: "nwHacks 2026"
+  platform: "devpost"
+  url: "https://nwhacks.devpost.com"
+  location: "Vancouver, Canada"
+  is_online: false
+  is_hybrid: true
+  themes: ["AI/ML", "Healthcare"]
+  prize_pool: "$28,000+"
+  currency: "USD"
+  prize_value: 28000
+  phases:
+    - name: "Registration Opens"
+      deadline: "2026-10-01T00:00:00"
+    - name: "Registration Closes"
+      deadline: "2026-12-10T23:59:59"
+    - name: "Hacking Starts"
+      deadline: "2027-01-09T09:00:00"
+    - name: "Project Submission"
+      deadline: "2027-01-11T09:00:00"
+    - name: "Demo Day"
+      deadline: "2027-01-11T14:00:00"
+  sponsors: ["UBC", "Amazon", "Mozilla", "IBM"]
+  eligibility: "University students"
+  status: "upcoming"
+  date_range: "January 9-11, 2027"
+  added_at: "2026-05-10"

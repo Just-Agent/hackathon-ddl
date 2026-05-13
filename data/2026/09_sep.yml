@@ -1,0 +1,53 @@
+- title: "HackMIT 2026"
+  platform: "mlh"
+  url: "https://hackmit.org"
+  location: "Cambridge, MA, USA"
+  is_online: false
+  is_hybrid: true
+  themes: ["AI/ML", "EdTech"]
+  prize_pool: "$40,000+"
+  currency: "USD"
+  prize_value: 40000
+  phases:
+    - name: "Registration Opens"
+      deadline: "2026-07-15T00:00:00"
+    - name: "Registration Closes"
+      deadline: "2026-09-15T23:59:59"
+    - name: "Hacking Starts"
+      deadline: "2026-09-27T08:00:00"
+    - name: "Project Submission"
+      deadline: "2026-09-28T08:00:00"
+    - name: "Demo Day"
+      deadline: "2026-09-28T13:00:00"
+  sponsors: ["MIT", "Palantir", "Databricks", "Scale AI"]
+  eligibility: "MIT students + invited schools"
+  status: "upcoming"
+  date_range: "September 27-28, 2026"
+  added_at: "2026-05-10"
+
+- title: "Cal Hacks 2026"
+  platform: "devpost"
+  url: "https://calhacks.devpost.com"
+  location: "Berkeley, CA, USA"
+  is_online: false
+  is_hybrid: false
+  themes: ["AI/ML", "Healthcare"]
+  prize_pool: "$30,000+"
+  currency: "USD"
+  prize_value: 30000
+  phases:
+    - name: "Registration Opens"
+      deadline: "2026-08-15T00:00:00"
+    - name: "Registration Closes"
+      deadline: "2026-10-10T23:59:59"
+    - name: "Hacking Starts"
+      deadline: "2026-10-24T10:00:00"
+    - name: "Project Submission"
+      deadline: "2026-10-26T10:00:00"
+    - name: "Demo Day"
+      deadline: "2026-10-26T14:00:00"
+  sponsors: ["Microsoft", "OpenAI", "NVIDIA", "Berkeley Engineering"]
+  eligibility: "University students"
+  status: "upcoming"
+  date_range: "October 24-26, 2026"
+  added_at: "2026-05-10"

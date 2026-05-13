@@ -1,0 +1,53 @@
+- title: "PennApps 2026"
+  platform: "mlh"
+  url: "https://pennapps.com"
+  location: "Philadelphia, PA, USA"
+  is_online: false
+  is_hybrid: false
+  themes: ["AI/ML", "Healthcare"]
+  prize_pool: "$32,000+"
+  currency: "USD"
+  prize_value: 32000
+  phases:
+    - name: "Registration Opens"
+      deadline: "2026-07-01T00:00:00"
+    - name: "Registration Closes"
+      deadline: "2026-08-25T23:59:59"
+    - name: "Hacking Starts"
+      deadline: "2026-09-05T17:00:00"
+    - name: "Project Submission"
+      deadline: "2026-09-07T08:00:00"
+    - name: "Demo Day"
+      deadline: "2026-09-07T13:00:00"
+  sponsors: ["Penn Engineering", "Goldman Sachs", "Bloomberg", "JPMorgan"]
+  eligibility: "University students worldwide"
+  status: "upcoming"
+  date_range: "September 5-7, 2026"
+  added_at: "2026-05-10"
+
+- title: "HackGT 2026"
+  platform: "mlh"
+  url: "https://hack.gt"
+  location: "Atlanta, GA, USA"
+  is_online: false
+  is_hybrid: false
+  themes: ["FinTech", "Blockchain"]
+  prize_pool: "$20,000+"
+  currency: "USD"
+  prize_value: 20000
+  phases:
+    - name: "Registration Opens"
+      deadline: "2026-08-01T00:00:00"
+    - name: "Registration Closes"
+      deadline: "2026-09-20T23:59:59"
+    - name: "Hacking Starts"
+      deadline: "2026-10-03T18:00:00"
+    - name: "Project Submission"
+      deadline: "2026-10-05T08:00:00"
+    - name: "Demo Day"
+      deadline: "2026-10-05T13:00:00"
+  sponsors: ["Georgia Tech", "BlackRock", "NCR", "Coca-Cola"]
+  eligibility: "University students"
+  status: "upcoming"
+  date_range: "October 3-5, 2026"
+  added_at: "2026-05-10"

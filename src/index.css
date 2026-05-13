@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-page: #FFFFFF;
+    --bg-card: #FAFAFA;
+    --bg-hover: #F5F5F5;
+    --text-primary: #1A1A1A;
+    --text-secondary: #6B7280;
+    --text-muted: #9CA3AF;
+    --border-light: #E5E7EB;
+    --border-medium: #D1D5DB;
+    --accent-blue: #3B82F6;
+    --accent-blue-light: #EFF6FF;
+    --accent-blue-hover: #2563EB;
+    --accent-orange: #F97316;
+    --accent-orange-light: #FFF7ED;
+    --accent-green: #22C55E;
+    --accent-green-light: #F0FDF4;
+    --accent-red: #EF4444;
+    --accent-red-light: #FEF2F2;
+    --accent-yellow: #EAB308;
+    --accent-yellow-light: #FEFCE8;
+    --accent-purple: #8B5CF6;
+    --accent-purple-light: #F5F3FF;
+    --accent-teal: #14B8A6;
+    --accent-teal-light: #F0FDFA;
+    --accent-rose: #F43F5E;
+    --accent-rose-light: #FFF1F2;
+    --accent-amber: #D97706;
+    --accent-indigo: #6366F1;
+    --accent-indigo-light: #EEF2FF;
+    --accent-slate: #475569;
+    --accent-slate-light: #F8FAFC;
+    --accent-cyan: #06B6D4;
+    --accent-cyan-light: #ECFEFF;
+    --accent-emerald: #059669;
+    --accent-emerald-light: #ECFDF5;
+
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  [data-theme="dark"] {
+    --bg-page: #0F0F0F;
+    --bg-card: #1A1A1A;
+    --bg-hover: #262626;
+    --text-primary: #F5F5F5;
+    --text-secondary: #A3A3A3;
+    --text-muted: #737373;
+    --border-light: #333333;
+    --border-medium: #404040;
+    --accent-blue: #3B82F6;
+    --accent-blue-light: #172554;
+    --accent-orange: #F97316;
+    --accent-orange-light: #431407;
+    --accent-green: #22C55E;
+    --accent-green-light: #052E16;
+    --accent-red: #EF4444;
+    --accent-red-light: #450A0A;
+    --accent-yellow: #EAB308;
+    --accent-yellow-light: #422006;
+    --accent-purple: #8B5CF6;
+    --accent-purple-light: #2E1065;
+    --accent-teal: #14B8A6;
+    --accent-teal-light: #042F2E;
+    --accent-rose: #F43F5E;
+    --accent-rose-light: #4C0519;
+    --accent-amber: #D97706;
+    --accent-indigo: #6366F1;
+    --accent-indigo-light: #1E1B4B;
+    --accent-slate: #94A3B8;
+    --accent-slate-light: #0F172A;
+    --accent-cyan: #06B6D4;
+    --accent-cyan-light: #083344;
+    --accent-emerald: #34D399;
+    --accent-emerald-light: #022C22;
+
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+}
