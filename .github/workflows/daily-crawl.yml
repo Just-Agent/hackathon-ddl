@@ -83,18 +83,18 @@ jobs:
             const title = `[Scraper] Daily crawl failed - ${new Date().toISOString().split('T')[0]}`;
             const body = `## Daily Crawl Failure
 
-**Time:** ${new Date().toISOString()}
-**Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            **Time:** ${new Date().toISOString()}
+            **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-### Error Details
-The automated scraper encountered an error. Please check the Actions logs for details.
+            ### Error Details
+            The automated scraper encountered an error. Please check the Actions logs for details.
 
-### Manual Steps
-1. Check the [Actions log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-2. Run scraper locally: \`python scripts/scraper.py --output data/2026/\`
-3. If platforms changed, update scraper in \`scripts/scraper.py\`
+            ### Manual Steps
+            1. Check the [Actions log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            2. Run scraper locally: \`python scripts/scraper.py --output data/2026/\`
+            3. If platforms changed, update scraper in \`scripts/scraper.py\`
 
-cc: @maintainers`;
+            cc: @maintainers`;
 
             github.rest.issues.create({
               owner: context.repo.owner,

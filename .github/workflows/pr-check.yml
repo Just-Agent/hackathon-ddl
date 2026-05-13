@@ -49,8 +49,7 @@ jobs:
         if: steps.changed.outputs.has_changes == 'true'
         id: validate
         run: |
-          files="${{ steps.changed.outputs.files }}"
-          # Also validate full data directory to catch cross-file issues
+          # Also validate full data directory to catch cross-file issues.
           python scripts/validator.py data/2026/ data/archive/
         continue-on-error: true
 
@@ -60,27 +59,26 @@ jobs:
         with:
           script: |
             const outcome = '${{ steps.validate.outcome }}';
-            const status = outcome === 'success' ? '✅ PASSED' : '❌ FAILED';
+            const status = outcome === 'success' ? 'PASSED' : 'FAILED';
             const sha = context.payload.pull_request.head.sha.substring(0, 7);
 
             const body = `## Data Validation ${status}
 
-**Commit:** \`${sha}\`
-**Validator:** \`scripts/validator.py\`
+            **Commit:** \`${sha}\`
+            **Validator:** \`scripts/validator.py\`
 
-${outcome === 'success'
-  ? 'All YAML data files pass schema validation.'
-  : 'Validation errors found. Please check the Actions log for details.'}
+            ${outcome === 'success'
+              ? 'All YAML data files pass schema validation.'
+              : 'Validation errors found. Please check the Actions log for details.'}
 
-### Schema Requirements
-- Required fields: \+title, platform, url, is_online, phases, status\+
-- Phases must have: name, deadline (ISO 8601)
-- Valid platforms: devpost, mlh, dorahacks, devfolio, unstop, hackerearth, other
-- Valid statuses: upcoming, ongoing, ended, cancelled
+            ### Schema Requirements
+            - Required fields: \`title\`, \`platform\`, \`url\`, \`is_online\`, \`phases\`, \`status\`
+            - Phases must have: name, deadline (ISO 8601)
+            - Valid platforms: devpost, mlh, dorahacks, devfolio, unstop, hackerearth, other
+            - Valid statuses: upcoming, ongoing, ended, cancelled
 
-See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) for full schema documentation.`;
+            See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) for full schema documentation.`;
 
-            // Find existing comment
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
