@@ -21,6 +21,18 @@ export default function Footer() {
               star or follow on GitHub
             </a>
           </p>
+          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+            Repository:{' '}
+            <a
+              href="https://github.com/Just-Agent/hackathon-ddl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors duration-150 hover:underline"
+              style={{ color: 'var(--accent-blue)' }}
+            >
+              github.com/Just-Agent/hackathon-ddl
+            </a>
+          </p>
           <div className="flex items-center gap-6 text-xs" style={{ color: 'var(--text-muted)' }}>
             <a
               href="https://github.com/Just-Agent/hackathon-ddl"
