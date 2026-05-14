@@ -1,0 +1,56 @@
+[
+  {
+    "id": "hackathon-ddl-1",
+    "title": "Hack the North 2026",
+    "deadline": "2026-09-01T23:59:59",
+    "dateRange": "Sep 18-20, 2026",
+    "location": "Waterloo, Canada",
+    "isOnline": false,
+    "tags": [
+      "AI/ML",
+      "Student"
+    ],
+    "url": "https://hackthenorth.com",
+    "status": "upcoming",
+    "stage": "Registration",
+    "source": "Official site",
+    "type": "hackathon",
+    "description": "??????? seed?"
+  },
+  {
+    "id": "hackathon-ddl-2",
+    "title": "ETHGlobal New York 2026",
+    "deadline": "2026-10-10T23:59:59",
+    "dateRange": "Oct 10-12, 2026",
+    "location": "New York, USA",
+    "isOnline": false,
+    "tags": [
+      "Web3",
+      "DeFi"
+    ],
+    "url": "https://ethglobal.com",
+    "status": "upcoming",
+    "stage": "Project submit",
+    "source": "Official site",
+    "type": "hackathon",
+    "description": "Web3 ??? seed?"
+  },
+  {
+    "id": "hackathon-ddl-3",
+    "title": "NASA Space Apps Challenge 2026",
+    "deadline": "2026-10-01T23:59:59",
+    "dateRange": "Oct 3-4, 2026",
+    "location": "Global",
+    "isOnline": true,
+    "tags": [
+      "Space",
+      "Open Data"
+    ],
+    "url": "https://www.spaceappschallenge.org",
+    "status": "upcoming",
+    "stage": "Local event",
+    "source": "Official site",
+    "type": "hackathon",
+    "description": "??????? seed?"
+  }
+]
