@@ -1,0 +1,9 @@
+[
+  {
+    "id": "official-seed",
+    "name": "Official and aggregator seed list",
+    "url": "https://www.competehub.dev/zh",
+    "priority": "seed",
+    "parser": "manual-review"
+  }
+]

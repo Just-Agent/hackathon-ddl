@@ -1,0 +1,36 @@
+name: Data Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/**
+      - scripts/**
+      - .github/workflows/data-check.yml
+  pull_request:
+    paths:
+      - data/**
+      - scripts/**
+      - .github/workflows/data-check.yml
+  workflow_dispatch:
+  schedule:
+    - cron: '17 2 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/validate-data.mjs
+      - run: node scripts/link-check.mjs
+      - run: node scripts/crawl-sources.mjs --write-report
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crawler-seed-report
+          path: reports/crawl-plan.json
