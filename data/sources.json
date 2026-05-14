@@ -1,9 +1,37 @@
 [
   {
-    "id": "official-seed",
-    "name": "Official and aggregator seed list",
-    "url": "https://www.competehub.dev/zh",
-    "priority": "seed",
+    "id": "devpost",
+    "name": "Devpost Hackathons",
+    "url": "https://devpost.com/hackathons",
+    "priority": "aggregator",
+    "parser": "generic-link-date"
+  },
+  {
+    "id": "mlh",
+    "name": "Major League Hacking",
+    "url": "https://mlh.io/seasons",
+    "priority": "official-network",
+    "parser": "generic-link-date"
+  },
+  {
+    "id": "ethglobal",
+    "name": "ETHGlobal Events",
+    "url": "https://ethglobal.com/events",
+    "priority": "official-network",
+    "parser": "generic-link-date"
+  },
+  {
+    "id": "nasa-space-apps",
+    "name": "NASA Space Apps Challenge",
+    "url": "https://www.spaceappschallenge.org/",
+    "priority": "official-event",
+    "parser": "generic-link-date"
+  },
+  {
+    "id": "dorahacks",
+    "name": "DoraHacks",
+    "url": "https://dorahacks.io",
+    "priority": "bounty-network",
     "parser": "generic-link-date"
   }
 ]
