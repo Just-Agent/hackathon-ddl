@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import NetworkBar from './NetworkBar';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -37,8 +38,9 @@ export default function Layout({ children }: LayoutProps) {
       className="flex min-h-[100dvh] flex-col"
       style={{ backgroundColor: 'var(--bg-page)' }}
     >
+      <NetworkBar />
       <Navbar isDark={isDark} onToggleTheme={toggleTheme} />
-      <main className="flex-1 pt-14">
+      <main className="flex-1 pt-[92px]">
         {children}
       </main>
       <Footer />

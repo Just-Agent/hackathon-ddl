@@ -1,125 +1,103 @@
+<div align="center">
+
 # Hackathon-DDL
 
-[![Daily Crawl](https://github.com/Just-Agent/hackathon-ddl/actions/workflows/daily-crawl.yml/badge.svg)](https://github.com/Just-Agent/hackathon-ddl/actions/workflows/daily-crawl.yml)
-[![Deploy to Pages](https://github.com/Just-Agent/hackathon-ddl/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/Just-Agent/hackathon-ddl/actions/workflows/deploy-pages.yml)
+全球黑客松、线上挑战赛与开发者竞赛截止日追踪。
 
-> **Worldwide Hackathon Deadline Tracker** �?全球 Hackathon 截止时间追踪平台
+Just-DDL Network 的黑客松专题仓库，一专题一仓库，独立抓取、独立部署、统一汇总。
 
-A community-driven platform for tracking hackathon deadlines worldwide. Inspired by [ccfddl](https://ccfddl.github.io/), built for hackers.
+[![GitHub Pages](https://img.shields.io/badge/Pages-live-F97316?style=for-the-badge)](https://just-agent.github.io/hackathon-ddl/)
+[![Daily Crawl](https://img.shields.io/badge/Action-daily%20crawl-2563EB?style=for-the-badge)](https://github.com/Just-Agent/hackathon-ddl/actions)
+[![React](https://img.shields.io/badge/React-19-149ECA?style=for-the-badge)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7-FBBF24?style=for-the-badge)](https://vite.dev/)
 
-[Live Website](https://just-agent.github.io/hackathon-ddl/) | [Contribute](#contributing) | [Data Schema](CONTRIBUTING.md#schema-reference)
+[在线访问](https://just-agent.github.io/hackathon-ddl/) · [专题总入口](https://just-agent.github.io/just-ddl/) · [提交 DDL](https://github.com/Just-Agent/hackathon-ddl/issues) · [GitHub 仓库](https://github.com/Just-Agent/hackathon-ddl)
 
----
+</div>
 
-## Features
+## 项目定位
 
-| Feature | Description |
-|---------|-------------|
-| **Real-time Countdown** | Live countdown to the nearest deadline for each hackathon |
-| **Multi-phase Tracking** | Track Registration, Hacking, Submission, and Demo Day deadlines |
-| **Prize Heat Map** | Visual prize pool comparison with color-coded bars |
-| **Smart Filters** | Filter by theme (AI/ML, Web3, IoT...), format (Online/In-person/Hybrid), platform |
-| **iCal/ICS Export** | One-click calendar subscription for all deadlines |
-| **Dark/Light Theme** | Comfortable viewing in any environment |
-| **Mobile Responsive** | Optimized for phones, tablets, and desktops |
-| **Community Driven** | Data maintained via GitHub Pull Requests |
-| **Auto Crawler** | Daily automated data scraping from major platforms |
+Hackathon-DDL 只负责黑客松专题：收集 Devpost、MLH、DoraHacks、Kaggle、企业挑战赛等公开赛事的报名、提交、决赛和评审截止日。它既可以独立作为 GitHub Pages 页面运行，也会被 Just-DDL 汇总为一个专题入口。
 
-## Tech Stack
+## 产品入口
 
-| Layer | Technology | Cost |
-|-------|-----------|------|
-| Frontend | React 19 + TypeScript + Vite + Tailwind CSS | Free |
-| Hosting | GitHub Pages | Free |
-| Data | GitHub YAML + PR Collaboration | Free |
-| Crawler | Python + GitHub Actions (Daily cron) | Free |
-| **Total** | | **$0/month** |
+| 入口 | 地址 | 用途 |
+| --- | --- | --- |
+| GitHub Pages | https://just-agent.github.io/hackathon-ddl/ | 黑客松专题线上页面 |
+| Just-DDL Hub | https://just-agent.github.io/just-ddl/ | 汇总全部 DDL 专题 |
+| Repository | https://github.com/Just-Agent/hackathon-ddl | 数据、代码、Actions 与贡献入口 |
+| Issues | https://github.com/Just-Agent/hackathon-ddl/issues | 补充赛事、修正日期、报告失效链接 |
 
-## Architecture
+## Just-DDL Network
 
-```
- GitHub Repo (Data + Code + CI/CD)
- ├── data/2026/*.yml          # Hackathon data (YAML)
- ├── src/                      # React frontend
- ├── scripts/
- �?  ├── scraper.py            # Multi-platform crawler
- �?  ├── validator.py          # YAML schema validator
- �?  └── ics_generator.py      # Calendar export
- ├── .github/workflows/
- �?  ├── daily-crawl.yml       # Daily scraping (00:00 UTC)
- �?  ├── pr-check.yml          # PR validation
- �?  └── deploy-pages.yml      # Auto-deploy frontend
- └── public/                   # Static assets
-```
+| 专题 | 仓库 | Pages | 状态 |
+| --- | --- | --- | --- |
+| Hackathon-DDL | [Just-Agent/hackathon-ddl](https://github.com/Just-Agent/hackathon-ddl) | [访问](https://just-agent.github.io/hackathon-ddl/) | 已发布 |
+| Agent-DDL | [Just-Agent/agent-ddl](https://github.com/Just-Agent/agent-ddl) | [访问](https://just-agent.github.io/agent-ddl/) | 已发布 |
+| Just-DDL Hub | [Just-Agent/just-ddl](https://github.com/Just-Agent/just-ddl) | [访问](https://just-agent.github.io/just-ddl/) | 已发布 |
+| CV-DDL | [Just-Agent/cv-ddl](https://github.com/Just-Agent/cv-ddl) | [访问](https://just-agent.github.io/cv-ddl/) | 专题骨架 |
+| NLP-DDL | [Just-Agent/nlp-ddl](https://github.com/Just-Agent/nlp-ddl) | [访问](https://just-agent.github.io/nlp-ddl/) | 专题骨架 |
+| Academic-DDL | [Just-Agent/academic-ddl](https://github.com/Just-Agent/academic-ddl) | [访问](https://just-agent.github.io/academic-ddl/) | 专题骨架 |
 
-**No server required.** Everything runs on GitHub's free infrastructure:
-- **GitHub Pages** serves the static React site
-- **GitHub Actions** runs the daily crawler
-- **GitHub YAML files** store the data
-- Community contributes via **Pull Requests**
+## 功能范围
 
-## Supported Platforms
+| 模块 | 当前能力 | 说明 |
+| --- | --- | --- |
+| DDL 列表 | 赛事名称、截止日、平台、状态、标签 | 面向快速浏览和收藏 |
+| 倒计时 | 按截止日期自动计算剩余时间 | 页面端轻量展示 |
+| 数据采集 | GitHub Actions 定时抓取 | 本地不依赖生产构建环境 |
+| Pages 部署 | main 分支自动部署 | 与专题总入口保持联动 |
+| 社区贡献 | Issue / PR 补充数据 | 适合持续维护赛事源 |
 
-| Platform | Coverage | Method |
-|----------|----------|--------|
-| [Devpost](https://devpost.com/hackathons) | Global | Web scraping |
-| [MLH](https://mlh.io) | North America/Europe | API + scraping |
-| [DoraHacks](https://dorahacks.io) | Asia/Global | API |
-| [Devfolio](https://devfolio.co) | India/Asia | Planned |
-| [Unstop](https://unstop.com) | India | Planned |
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
-
-### Quick Add (3 Steps)
-
-1. **Fork** this repository
-2. **Add data** to `data/2026/MM_mon.yml` (see schema below)
-3. **Submit PR** �?CI validates automatically
-
-### Minimal Entry
+## 数据结构
 
 ```yaml
-- title: "Hackathon Name 2026"
-  platform: "devpost"
-  url: "https://example.devpost.com"
-  is_online: false
-  phases:
-    - name: "Registration Deadline"
-      deadline: "2026-09-01T23:59:59-04:00"
-  status: "upcoming"
+id: hackathon-example-2026
+name: Example Hackathon 2026
+platform: Devpost
+url: https://example.com
+region: Global
+deadline: 2026-08-15T23:59:00Z
+tags:
+  - AI
+  - Web
+  - Student
+status: upcoming
 ```
 
-## Project Roadmap
+## 自动化
 
-- [x] Frontend MVP with real-time countdown
-- [x] Multi-phase deadline tracking
-- [x] Prize heat visualization
-- [x] Theme and format filtering
-- [x] iCal/ICS calendar export
-- [x] Dark/light theme
-- [x] Mobile responsive design
-- [x] YAML data schema + validator
-- [x] GitHub Actions CI/CD
-- [x] Auto-deploy to GitHub Pages
-- [ ] Daily scraper (Devpost, MLH, DoraHacks)
-- [ ] WeChat Mini Program
-- [ ] CLI tool (`pip install hackathon-ddl`)
-- [ ] Chrome extension
-- [ ] Team matching feature
-- [ ] Historical win rate analysis
+| Workflow | 触发方式 | 目标 |
+| --- | --- | --- |
+| `daily-crawl.yml` | 定时 / 手动 | 更新黑客松数据源 |
+| `deploy-pages.yml` | main 分支 / 手动 | 部署 GitHub Pages |
+| `pr-check.yml` | Pull Request | 基础校验，避免坏数据进入主分支 |
 
-## Acknowledgements
+> 本仓库遵循“本地不构建生产包”的协作约定。构建、打包和发布交给 GitHub Actions。
 
-Inspired by [ccfddl](https://ccfddl.github.io/) �?the academic conference deadline tracker that proved community-driven data curation works.
+## 本地开发
+
+```bash
+npm install
+npm run dev
+```
+
+生产部署请以 GitHub Actions 结果为准。本地命令只用于开发预览，不作为生产机部署证明。
+
+## 路线图
+
+| 阶段 | 事项 | 状态 |
+| --- | --- | --- |
+| 1 | 专题仓库与 Pages 独立部署 | 完成 |
+| 2 | Just-DDL Hub 统一展示仓库、Pages 与专题信息 | 进行中 |
+| 3 | 自动抓取源扩展到更多赛事平台 | 计划中 |
+| 4 | 微信小程序专题页复用同一数据模型 | 计划中 |
+| 5 | PC / App 个人 DDL 与官方 DDL 聚合 | 计划中 |
+
+## 贡献
+
+欢迎通过 Issue 提交新的黑客松、修正时间、补充官方链接。提交时请尽量提供官网地址、截止日时区、报名/提交/决赛的不同阶段时间。
 
 ## License
 
-MIT License �?free for personal and commercial use.
-
----
-
-**Maintained by the community.** If you find it useful, [star us on GitHub](https://github.com/Just-Agent/hackathon-ddl)!
-
-*Data is manually collected and automatically crawled for reference purposes only.*
+当前仓库处于产品孵化阶段。正式开源协议会在发布稳定版本前补齐。

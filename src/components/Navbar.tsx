@@ -20,7 +20,7 @@ export default function Navbar({ isDark, onToggleTheme }: NavbarProps) {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-200"
+      className="fixed top-9 left-0 right-0 z-50 transition-all duration-200"
       style={{
         backgroundColor: 'var(--bg-page)',
         borderBottom: '1px solid var(--border-light)',
@@ -51,7 +51,7 @@ export default function Navbar({ isDark, onToggleTheme }: NavbarProps) {
               color: 'var(--text-secondary)',
             }}
           >
-            ★ 1.2k
+            GitHub Pages
           </span>
         </div>
 
