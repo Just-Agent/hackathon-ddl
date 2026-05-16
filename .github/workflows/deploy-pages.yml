@@ -1,5 +1,5 @@
 # Deploy to GitHub Pages
-# Builds the React frontend and deploys to GitHub Pages on every push to main.
+# Builds the frontend and deploys dist to GitHub Pages.
 
 name: Deploy to GitHub Pages
 
@@ -11,11 +11,11 @@ on:
       - "public/**"
       - "index.html"
       - "package.json"
+      - "package-lock.json"
       - "tailwind.config.js"
       - "vite.config.ts"
       - "tsconfig*.json"
       - ".github/workflows/deploy-pages.yml"
-
   workflow_dispatch:
 
 permissions:
@@ -32,27 +32,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v6
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: "20"
+          node-version: "24"
           cache: "npm"
-
       - name: Install dependencies
         run: npm ci
-
       - name: Build
         run: npm run build
         env:
           BASE_URL: ${{ vars.BASE_URL || '' }}
-
       - name: Setup Pages
-        uses: actions/configure-pages@v4
-
+        uses: actions/configure-pages@v6
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: "./dist"
 
@@ -65,4 +60,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
